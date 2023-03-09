@@ -1,2 +1,3 @@
 # senac-analise-e-desenvolvimento-de-sistemas
- Aulas de ADS do Senac RS/Pelotas
+Conteúdo dos exercicios e aulas de Análise e Desenvolvimento de Sistemas do Senac RS/Pelotas
+Criado por Aluisio Pereira.
