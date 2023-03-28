@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --red: #a21c26;
+    --light-gray: #838383;
+    --gray: #3b3b3b;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
+    list-style: none;
+    color: var(--gray);
+}
+
+.vermelho {
+    color: var(--red);
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    font-size: 100%;
+}
+
+main {
+    width: 70%;
+    padding-right: 25px;
+    margin-left: 50px;
+}
+
+nav > ul {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+nav > ul > li {
+    padding: 0 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1rem;
+    margin: 25px 0 25px 0;
+}
+
+#dados > h1 {
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    text-align: left;
+    border-bottom: 2px solid #3b3b3b;
+    font-size: 2.25rem;
+    margin: 25px 0 50px;
+}
+
+#dados > div {
+    margin-top: 50px;
+}
+
+#dados > div > ul> li > p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75em;
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    margin: 25px 0 10px;
+}
+
+#historia > p {
+    font-family: 'Roboto', sans-serif;
+}
+
+#formacao > ol > li {
+    list-style: inside;
+    list-style-type: decimal;
+}
+
+#formacao > ol > li > p {
+    font-size: 0.8rem;
+}
+
+.pequeno {
+    font-size: 0.7rem;
+    margin-bottom: 15px;
+}
+
+#certificados > ol > li {
+    list-style: inside;
+    list-style-type: decimal;
+}
+
+#certificados > ol > li {
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+
+aside {
+    padding-left: 25px;
+    padding-right: 50px;
+    width: 30%;
+    background-color: var(--gray);
+    color: white;
+}
+
+h3, h3 > a {
+    margin: 25px 0 15px;
+    color: white;
+}
+
+h4 {
+    margin: 10px;
+    color: #838383;
+}
+
+aside > ul > li {
+    color: #838383;
+    font-size: 0.7rem;
+    list-style: inside;
+}
+
+img {
+    margin-top: 25px;
+    width: 100%;
+}
+
