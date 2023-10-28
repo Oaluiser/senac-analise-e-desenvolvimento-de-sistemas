@@ -63,7 +63,7 @@ function App() {
       <td>{viagem.destino}</td>
       <td>{viagem.data}</td>
       <td>{viagem.duracao}</td>
-      <td>{viagem.preco}</td>
+      <td>{viagem.preco+".00"}</td>
       <td>        
         <i className="bi bi-airplane fs-4 text-danger ms-2"
         style={{ cursor: 'pointer' }}

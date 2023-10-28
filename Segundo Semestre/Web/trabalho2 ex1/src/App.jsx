@@ -41,7 +41,7 @@ function App() {
       <td>{carro.modelo}</td>
       <td>{carro.marca}</td>
       <td>{carro.ano}</td>
-      <td>{carro.preco}</td>
+      <td>{carro.preco+".00"}</td>
       <td>        
         <i className="bi bi-trash3 fs-4 text-danger ms-2"
         style={{ cursor: 'pointer' }}
