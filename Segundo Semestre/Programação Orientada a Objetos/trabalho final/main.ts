@@ -9,11 +9,26 @@ let aluno: Aluno
 let curso: Curso
 let materias: Array<Materia> = []
 let horas: Array<Horas> = []
+let isLogado: boolean = false
 
 const consultarAluno = () => {
   aluno
     ? console.log("Nome: ", aluno.nome)
     : console.log("Aluno não cadastrado")
+}
+
+const login = (nome: string, senha: string) => {
+  if (!aluno) {
+    console.log("Aluno não cadastrado")
+    return
+  }
+  
+  if (aluno.nome === nome && aluno.senha === senha) {
+    isLogado = true
+    console.log("Login efetuado com sucesso")
+  } else {
+    console.log("Login ou senha inválidos")
+  }
 }
 
 const consultarCurso = () => {
@@ -31,34 +46,47 @@ const consultarMaterias = () => {
 const consultarHoras = () => {
   if (horas.length > 0) {
     horas.forEach((hora) => console.log("Nome: ", hora.nome))
-    console.log("Total de horas: ", horas.reduce((acc, hora) => acc + hora.quantidadeHoras, 0))
+    console.log(
+      "Total de horas: ",
+      horas.reduce((acc, hora) => acc + hora.quantidadeHoras, 0)
+    )
   } else {
     console.log("Nenhuma hora cadastrada")
   }
 }
 
 while (run) {
-  console.log("1 - Sair")
-  console.log("2 - Cadastrar Aluno")
-  console.log("3 - Cadastrar Curso")
-  console.log("4 - Cadastrar Matéria")
-  console.log("5 - Cadastrar Horas")
-  console.log("6 - Consultar Aluno")
-  console.log("7 - Consultar Curso")
-  console.log("8 - Consultar Matérias")
-  console.log("9 - Consultar Horas")
+  if (!isLogado) {
+    console.log("0 - Sair")
+    console.log("1 - Cadastrar Aluno")
+    console.log("2 - Login")
+  } else {
+    console.log("0 - Sair")
+    console.log("3 - Cadastrar Curso")
+    console.log("4 - Cadastrar Matéria")
+    console.log("5 - Cadastrar Horas")
+    console.log("6 - Consultar Aluno")
+    console.log("7 - Consultar Curso")
+    console.log("8 - Consultar Matérias")
+    console.log("9 - Consultar Horas")
+  }
 
   let opcao: number = +prompt("Digite uma opção: ")
 
   switch (opcao) {
-    case 1:
+    case 0:
       run = false
       break
-    case 2:
+    case 1:
       aluno = Aluno.cadastrar(
         prompt("Digite o nome do aluno: "),
         prompt("Digite a senha do aluno: ")
       )
+      break
+    case 2:
+      const nome: string = prompt("Digite o nome do aluno: ")
+      const senha: string = prompt("Digite a senha do aluno: ")
+      login(nome, senha)
       break
     case 3:
       curso = Curso.cadastrar(
