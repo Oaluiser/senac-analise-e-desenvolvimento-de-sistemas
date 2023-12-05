@@ -13,7 +13,7 @@ let isLogado: boolean = false
 
 const consultarAluno = () => {
   aluno
-    ? console.log("Nome: ", aluno.getNome)
+    ? console.log("Nome: ", aluno.getNome())
     : console.log("Aluno não cadastrado")
 }
 
