@@ -1,11 +1,15 @@
-export class Curso {
+import { Default } from "./Default"
+
+export class Curso extends Default {
   constructor(
-    private _nome: string,
+    protected _nome: string,
     private _totalHorasComplementares: number,
     private _totalHoras: number
-  ) {}
+  ) {
+    super(_nome)
+  }
 
-  public get nome(): string {
+  public getNome(): string {
     return this._nome
   }
 

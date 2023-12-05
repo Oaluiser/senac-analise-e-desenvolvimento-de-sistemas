@@ -2,19 +2,22 @@ import { Default } from './Default'
 
 export class Aluno extends Default {
   constructor(
-    nome: string,
+    protected _nome: string,
     private _senha: string
   ) {
-    super(nome)
+    super(_nome)
+  }
+
+  public getNome(): string {
+    return this._nome
   }
 
   public get senha(): string {
     return this._senha
   }
 
-  public cadastrar(nome: string, senha: string): void {
-    this._senha = senha
-    this.nome = nome
+  public static cadastrar(nome: string, senha: string): Aluno {
+    return new Aluno(nome, senha)
   }
 
   public set senha(senha: string) {

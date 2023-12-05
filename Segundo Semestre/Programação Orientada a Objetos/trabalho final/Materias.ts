@@ -1,12 +1,16 @@
-export class Materia {
+import { Default } from './Default'
+
+export class Materia extends Default {
   constructor(
-    private _nome: string,
+    protected _nome: string,
     private _semestre: number,
     private _status: boolean,
     private _horas: number
-  ) {}
+  ) {
+    super(_nome)
+  }
 
-  public get nome(): string {
+  public getNome(): string {
     return this._nome
   }
 

@@ -1,11 +1,15 @@
-export class Horas {
+import { Default } from "./Default"
+
+export class Horas extends Default {
   constructor(
-    private _nome: string,
+    protected _nome: string,
     private _quantidadeHoras: number,
     private _horasAceitas: number
-  ) {}
+  ) {
+    super(_nome)
+  }
 
-  public get nome(): string {
+  public getNome(): string {
     return this._nome
   }
 

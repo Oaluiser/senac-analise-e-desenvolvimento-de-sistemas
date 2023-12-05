@@ -13,7 +13,7 @@ let isLogado: boolean = false
 
 const consultarAluno = () => {
   aluno
-    ? console.log("Nome: ", aluno.nome)
+    ? console.log("Nome: ", aluno.getNome)
     : console.log("Aluno não cadastrado")
 }
 
@@ -22,8 +22,8 @@ const login = (nome: string, senha: string) => {
     console.log("Aluno não cadastrado")
     return
   }
-  
-  if (aluno.nome === nome && aluno.senha === senha) {
+
+  if (aluno.getNome() === nome && aluno.senha === senha) {
     isLogado = true
     console.log("Login efetuado com sucesso")
   } else {
@@ -39,13 +39,13 @@ const consultarCurso = () => {
 
 const consultarMaterias = () => {
   materias.length > 0
-    ? materias.forEach((materia) => console.log("Nome: ", materia.nome))
+    ? materias.forEach((materia) => console.log("Nome: ", materia.getNome()))
     : console.log("Nenhuma matéria cadastrada")
 }
 
 const consultarHoras = () => {
   if (horas.length > 0) {
-    horas.forEach((hora) => console.log("Nome: ", hora.nome))
+    horas.forEach((hora) => console.log("Nome: ", hora.getNome()))
     console.log(
       "Total de horas: ",
       horas.reduce((acc, hora) => acc + hora.quantidadeHoras, 0)
