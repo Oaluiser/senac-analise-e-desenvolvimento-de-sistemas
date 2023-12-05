@@ -12,6 +12,10 @@ export class Aluno extends Default {
     return this._nome
   }
 
+  public setNome(nome: string) {
+    this._nome = nome
+  }
+
   public get senha(): string {
     return this._senha
   }

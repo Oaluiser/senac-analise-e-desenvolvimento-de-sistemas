@@ -13,12 +13,24 @@ export class Horas extends Default {
     return this._nome
   }
 
+  public setNome(nome: string) {
+    this._nome = nome
+  }
+
   public get quantidadeHoras(): number {
     return this._quantidadeHoras
   }
 
+  public setQuantidadeHoras(quantidadeHoras: number) {
+    this._quantidadeHoras = quantidadeHoras
+  }
+
   public get horasAceitas(): number {
     return this._horasAceitas
+  }
+
+  public setQuantidadeHorasAceitas(horasAceitas: number) {
+    this._horasAceitas = horasAceitas
   }
 
   public static cadastrar(

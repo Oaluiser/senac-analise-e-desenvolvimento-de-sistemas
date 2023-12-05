@@ -5,8 +5,8 @@ import { Materia } from "./Materias"
 const prompt = require("prompt-sync")()
 
 let run: boolean = true
-let aluno: Aluno
-let curso: Curso
+let aluno: Aluno | null = null
+let curso: Curso | null = null
 let materias: Array<Materia> = []
 let horas: Array<Horas> = []
 let isLogado: boolean = false
@@ -55,6 +55,105 @@ const consultarHoras = () => {
   }
 }
 
+const editarAluno = () => {
+  if (!aluno) {
+    console.log("Aluno não cadastrado")
+    return
+  }
+
+  aluno.setNome(prompt("Digite o novo nome do aluno: "))
+  aluno.senha = prompt("Digite a nova senha do aluno: ")
+}
+
+const editarCurso = () => {
+  if (!curso) {
+    console.log("Curso não cadastrado")
+    return
+  }
+
+  curso.nome = prompt("Digite o novo nome do curso: ")
+  curso.totalHorasComplementares = +prompt(
+    "Digite o novo total de horas complementares: "
+  )
+  curso.totalHoras = +prompt("Digite o novo total de horas: ")
+}
+
+const editarMateria = () => {
+  if (materias.length === 0) {
+    console.log("Nenhuma matéria cadastrada")
+    return
+  }
+
+  materias.forEach((materia, index) => {
+    console.log(`${index} - ${materia.getNome()}`)
+  })
+
+  const index: number = +prompt("Digite o número da matéria: ")
+  const materia: Materia = materias[index]
+  materia.setNome(prompt("Digite o novo nome da matéria: "))
+  materia.setSemestre(+prompt("Digite o novo semestre da matéria: "))
+  const status: number = +prompt("Digite 1 - Concluído | 0 - Não Concluído: ")
+  materia.setStatus(status === 1 ? true : false)
+  materia.setHoras(+prompt("Digite o novo total de horas: "))
+}
+
+const editarHoras = () => {
+  if (horas.length === 0) {
+    console.log("Nenhuma hora cadastrada")
+    return
+  }
+
+  horas.forEach((hora, index) => {
+    console.log(`${index} - ${hora.getNome()}`)
+  })
+
+  const index: number = +prompt("Digite o número da hora: ")
+  const hora: Horas = horas[index]
+  hora.setNome(prompt("Digite o novo nome da hora: "))
+  hora.setQuantidadeHoras(+prompt("Digite o novo total de horas: "))
+  hora.setQuantidadeHorasAceitas(
+    +prompt("Digite o novo total de horas aceitas: ")
+  )
+}
+
+const excluirAluno = () => {
+  aluno = null
+}
+
+const excluirCurso = () => {
+  curso = null
+}
+
+const excluirMateria = () => {
+  if (materias.length === 0) {
+    console.log("Nenhuma matéria cadastrada")
+    return
+  }
+
+  materias.forEach((materia, index) => {
+    console.log(`${index} - ${materia.getNome()}`)
+  })
+
+  const index: number = +prompt("Digite o número da matéria a ser excluida: ")
+  materias.splice(index, 1)
+  console.log("Matéria excluída com sucesso")
+}
+
+const excluirHoras = () => {
+  if (horas.length === 0) {
+    console.log("Nenhuma hora cadastrada")
+    return
+  }
+
+  horas.forEach((hora, index) => {
+    console.log(`${index} - ${hora.getNome()}`)
+  })
+
+  const index: number = +prompt("Digite o número da hora a ser excluida: ")
+  horas.splice(index, 1)
+  console.log("Hora excluída com sucesso")
+}
+
 while (run) {
   if (!isLogado) {
     console.log("0 - Sair")
@@ -69,6 +168,14 @@ while (run) {
     console.log("7 - Consultar Curso")
     console.log("8 - Consultar Matérias")
     console.log("9 - Consultar Horas")
+    console.log("10 - Editar Aluno")
+    console.log("11 - Editar Curso")
+    console.log("12 - Editar Matéria")
+    console.log("13 - Editar Horas")
+    console.log("14 - Excluir Aluno")
+    console.log("15 - Excluir Curso")
+    console.log("16 - Excluir Matéria")
+    console.log("17 - Excluir Horas")
   }
 
   let opcao: number = +prompt("Digite uma opção: ")
@@ -123,6 +230,30 @@ while (run) {
       break
     case 9:
       consultarHoras()
+      break
+    case 10:
+      editarAluno()
+      break
+    case 11:
+      editarCurso()
+      break
+    case 12:
+      editarMateria()
+      break
+    case 13:
+      editarHoras()
+      break
+    case 14:
+      excluirAluno()
+      break
+    case 15:
+      excluirCurso()
+      break
+    case 16:
+      excluirMateria()
+      break
+    case 17:
+      excluirHoras()
       break
     default:
       console.log("Opção inválida")
