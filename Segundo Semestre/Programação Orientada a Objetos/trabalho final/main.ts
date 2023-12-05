@@ -48,7 +48,7 @@ const consultarHoras = () => {
     horas.forEach((hora) => console.log("Nome: ", hora.getNome()))
     console.log(
       "Total de horas: ",
-      horas.reduce((acc, hora) => acc + hora.quantidadeHoras, 0)
+      horas.reduce((acc, hora) => acc + hora.horasAceitas, 0)
     )
   } else {
     console.log("Nenhuma hora cadastrada")
