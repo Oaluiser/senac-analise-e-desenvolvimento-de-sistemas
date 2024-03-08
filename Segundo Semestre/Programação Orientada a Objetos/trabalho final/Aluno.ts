@@ -1,4 +1,4 @@
-import { Default } from './Default'
+import { Default } from "./Default"
 
 export class Aluno extends Default {
   constructor(

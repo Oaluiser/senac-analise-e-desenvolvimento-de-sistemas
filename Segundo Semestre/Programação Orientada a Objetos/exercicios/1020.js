@@ -1,5 +1,5 @@
-const input = require('fs').readFileSync('stdin', 'utf8');
-const lines = input.split('\n');
+const input = require("fs").readFileSync("stdin", "utf8")
+const lines = input.split("\n")
 
 let total = +lines[0]
 let day = 0

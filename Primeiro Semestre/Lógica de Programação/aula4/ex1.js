@@ -9,7 +9,7 @@ console.log(`Ano de Nascimento: ${nascimento}`)
 console.log(`Idade: ${idade}`)
 
 if (idade < 18) {
-    console.log(`${aluno}, você é menor de idade`)
+  console.log(`${aluno}, você é menor de idade`)
 } else {
-    console.log(`${aluno}, você é maior de idade`)
+  console.log(`${aluno}, você é maior de idade`)
 }

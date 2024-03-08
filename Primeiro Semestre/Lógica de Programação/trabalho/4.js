@@ -7,18 +7,17 @@ let idades = []
 let jogadorAtual = ""
 let somaIdades = 0
 
-
 while (jogadorAtual != "Fim") {
-    jogadorAtual = prompt("Jogador: ")
-    jogadores.push(jogadorAtual)
+  jogadorAtual = prompt("Jogador: ")
+  jogadores.push(jogadorAtual)
 
-    if (jogadorAtual != "Fim") {
-        idades.push(Number(prompt("Idade: ")))
-    }
+  if (jogadorAtual != "Fim") {
+    idades.push(Number(prompt("Idade: ")))
+  }
 }
 
 for (let i = 0; i < idades.length; i++) {
-    somaIdades = somaIdades + idades[i]
+  somaIdades = somaIdades + idades[i]
 }
 
 let media = somaIdades / idades.length
@@ -29,7 +28,7 @@ console.log("Jogadores Mais Experientes")
 console.log("-----------------------------------")
 
 for (let i = 0; i < idades.length; i++) {
-    if (idades[i] > media) {
-        console.log(`${jogadores[i]} - ${idades[i]} anos`)
-    }
+  if (idades[i] > media) {
+    console.log(`${jogadores[i]} - ${idades[i]} anos`)
+  }
 }

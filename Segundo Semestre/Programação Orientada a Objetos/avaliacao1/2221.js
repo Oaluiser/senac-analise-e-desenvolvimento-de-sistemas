@@ -1,8 +1,7 @@
-var input = require('fs').readFileSync('stdin', 'utf8');
-var lines = input.split('\n');
+var input = require("fs").readFileSync("stdin", "utf8")
+var lines = input.split("\n")
 
 let t = +lines.shift()
-
 
 for (let i = 0; i < t; i++) {
   const b = +lines.shift()
@@ -18,7 +17,7 @@ for (let i = 0; i < t; i++) {
   const a2 = +splitted2.shift()
   const d2 = +splitted2.shift()
   const l2 = +splitted2.shift()
-  
+
   if (l1 % 2 === 0) {
     b1 = b
   }
@@ -27,8 +26,8 @@ for (let i = 0; i < t; i++) {
     b2 = b
   }
 
-  const val1 = ((a1 + d1) / 2) + b1
-  const val2 = ((a2 + d2) / 2) + b2
+  const val1 = (a1 + d1) / 2 + b1
+  const val2 = (a2 + d2) / 2 + b2
 
   if (val1 > val2) {
     console.log("Dabriel")

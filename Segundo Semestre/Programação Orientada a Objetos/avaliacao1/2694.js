@@ -1,5 +1,5 @@
-var input = require('fs').readFileSync('stdin', 'utf8');
-var lines = input.split('\n');
+var input = require("fs").readFileSync("stdin", "utf8")
+var lines = input.split("\n")
 
 const length = lines.length
 let regex = /[a-zA-z]/

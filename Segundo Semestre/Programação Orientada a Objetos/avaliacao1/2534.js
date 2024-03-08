@@ -1,5 +1,5 @@
-var input = require('fs').readFileSync('stdin', 'utf8')
-var lines = input.split('\n')
+var input = require("fs").readFileSync("stdin", "utf8")
+var lines = input.split("\n")
 
 const n = +lines[0][0]
 const q = +lines[0][2]
@@ -13,5 +13,5 @@ for (let i = 0; i < n; i++) {
 arr.sort((a, b) => b - a)
 
 for (let i = 0; i < q; i++) {
-  console.log(arr[+lines[i]-1])
+  console.log(arr[+lines[i] - 1])
 }

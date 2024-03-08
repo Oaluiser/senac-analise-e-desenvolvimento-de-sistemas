@@ -8,7 +8,7 @@ console.log(`Produto: ${produto}`)
 console.log(`Preço R$: ${preco.toFixed(2)}`)
 
 if (preco < 100) {
-    console.log(`Somente à vista`)
+  console.log(`Somente à vista`)
 } else {
-    console.log(`Pode pagar em 3x de ${parcelas.toFixed(2)}`)
+  console.log(`Pode pagar em 3x de ${parcelas.toFixed(2)}`)
 }

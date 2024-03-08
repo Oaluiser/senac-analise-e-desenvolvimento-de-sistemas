@@ -1,4 +1,4 @@
-import { Default } from './Default'
+import { Default } from "./Default"
 
 export class Materia extends Default {
   constructor(

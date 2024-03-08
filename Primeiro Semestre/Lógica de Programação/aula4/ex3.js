@@ -5,8 +5,8 @@ const marca = prompt("Marca: ")
 const preco = Number(prompt("Preço: "))
 let desconto = preco * 0.2
 if (marca === "Fiat") {
-    desconto = preco * 0.1
-} 
+  desconto = preco * 0.1
+}
 
 const vista = preco - desconto
 

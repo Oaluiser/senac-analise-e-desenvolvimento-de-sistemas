@@ -1,5 +1,5 @@
-var input = require('fs').readFileSync('stdin', 'utf8');
-var lines = input.split('\n');
+var input = require("fs").readFileSync("stdin", "utf8")
+var lines = input.split("\n")
 
 while (lines[0] !== "0") {
   const clients = lines.splice(1, lines[0])
@@ -12,31 +12,31 @@ while (lines[0] !== "0") {
       switch (split[1]) {
         case "suco":
           vit += 120
-          break;
+          break
         case "morango":
         case "mamao":
           vit += 85
-          break;
+          break
         case "goiaba":
           vit += 70
-          break;
+          break
         case "manga":
           vit += 56
-          break;
+          break
         case "laranja":
           vit += 50
-          break;
+          break
         case "brocolis":
           vit += 34
-          break;
+          break
       }
     }
   }
 
   if (vit > 130) {
-    console.log(`Menos ${vit-130} mg`)
+    console.log(`Menos ${vit - 130} mg`)
   } else if (vit < 110) {
-    console.log(`Mais ${110-vit} mg`)
+    console.log(`Mais ${110 - vit} mg`)
   } else {
     console.log(`${vit} mg`)
   }

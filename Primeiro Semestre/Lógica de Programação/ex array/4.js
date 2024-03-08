@@ -5,10 +5,10 @@ console.log(salarios.join(", "))
 
 const minimo = prompt("Valor Mínimo: ")
 
-const pesquisa = salarios.filter(obj => obj >= minimo)
+const pesquisa = salarios.filter((obj) => obj >= minimo)
 
 if (pesquisa.length == 0) {
-    console.log("Não existe")
+  console.log("Não existe")
 } else {
-    console.log("Maiores ou Iguais: " + pesquisa.join(", "))
+  console.log("Maiores ou Iguais: " + pesquisa.join(", "))
 }

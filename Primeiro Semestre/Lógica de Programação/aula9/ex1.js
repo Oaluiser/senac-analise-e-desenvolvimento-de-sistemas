@@ -7,6 +7,6 @@ console.log("Opções de Pagamento")
 console.log("---------------")
 
 for (let i = 1; i < 10; i++) {
-    const parcela = preco/i
-    console.log(`${i} x ${parcela.toFixed(2)}`)
+  const parcela = preco / i
+  console.log(`${i} x ${parcela.toFixed(2)}`)
 }
