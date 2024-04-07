@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Viagens {
+  id         Int        @id @default(autoincrement())
+  destino    String
+  transporte Transporte
+  preco      Float
+  duracao    Int
+}
+
+enum Transporte {
+  Terrestre
+  Maritimo
+  Aereo
+}
