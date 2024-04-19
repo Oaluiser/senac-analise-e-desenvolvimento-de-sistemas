@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model imoveis {
+  id       Int    @id @default(autoincrement())
+  tipo     Tipo
+  endereco String
+  bairro   String
+  preco    Float
+  dorm     Int
+}
+
+enum Tipo {
+  Casa
+  Apto
+  Sala
+}
