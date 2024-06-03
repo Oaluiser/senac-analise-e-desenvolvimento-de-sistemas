@@ -7,15 +7,15 @@ def sorteiaPergunta():
     global pontuacao
     if pontuacao < 4:
         arquivo = open(
-            "Terceiro Semestre/Algoritmos e Estrutura de Dados/trabalho1/facil.txt", "r"
+            "/Users/oaluiser/Documents/GitHub/senac-analise-e-desenvolvimento-de-sistemas/Terceiro Semestre/Algoritmos e Estrutura de Dados/trabalho1/facil.txt", "r"
         )
     elif pontuacao < 8:
         arquivo = open(
-            "Terceiro Semestre/Algoritmos e Estrutura de Dados/trabalho1/medio.txt", "r"
+            "/Users/oaluiser/Documents/GitHub/senac-analise-e-desenvolvimento-de-sistemas/Terceiro Semestre/Algoritmos e Estrutura de Dados/trabalho1/medio.txt", "r"
         )
     else:
         arquivo = open(
-            "Terceiro Semestre/Algoritmos e Estrutura de Dados/trabalho1/.txt", "r"
+            "/Users/oaluiser/Documents/GitHub/senac-analise-e-desenvolvimento-de-sistemas/Terceiro Semestre/Algoritmos e Estrutura de Dados/trabalho1/.txt", "r"
         )
 
     perguntas = arquivo.readlines()
@@ -53,7 +53,7 @@ def sorteiaPergunta():
         print("Sua pontuação foi: ", pontuacao)
         nome = input("Digite seu nome:")
         open(
-            "Terceiro Semestre/Algoritmos e Estrutura de Dados/trabalho1/ranking.txt",
+            "/Users/oaluiser/Documents/GitHub/senac-analise-e-desenvolvimento-de-sistemas/Terceiro Semestre/Algoritmos e Estrutura de Dados/trabalho1/ranking.txt",
             "a",
         ).write(nome + " " + str(pontuacao) + "\n")
         pontuacao = 0
@@ -71,7 +71,7 @@ while True:
     elif opcao == "2":
         print("Ranking:")
         arquivo = open(
-            "Terceiro Semestre/Algoritmos e Estrutura de Dados/trabalho1/ranking.txt",
+            "/Users/oaluiser/Documents/GitHub/senac-analise-e-desenvolvimento-de-sistemas/Terceiro Semestre/Algoritmos e Estrutura de Dados/trabalho1/ranking.txt",
             "r",
         )
         ranking = arquivo.readlines()
