@@ -48,6 +48,12 @@ router.post("/", async (req, res) => {
   if (!nome || !email || !senha)
     return res.status(400).json({ erro: "Informe nome, email e senha" })
 
+  const usuarioExiste = await prisma.usuario.findFirst({ where: { email } })
+  if (usuarioExiste)
+    return res
+      .status(400)
+      .json({ erro: "Usuário já cadastrado com este email" })
+
   const erros = validaSenha(senha)
   if (erros.length > 0) return res.status(400).json({ erro: erros.join("; ") })
 
@@ -59,6 +65,39 @@ router.post("/", async (req, res) => {
       data: { nome, email, senha: hash },
     })
     return res.status(201).json(usuario)
+  } catch (error) {
+    return res.status(400).json(error)
+  }
+})
+
+// Implementar rotina de alteração de senha do usuário, validando a senha atual e criptografando a nova senha.
+
+router.put("/", async (req, res) => {
+  const { email, senhaAtual, novaSenha } = req.body
+
+  if (!email || !senhaAtual || !novaSenha)
+    return res
+      .status(400)
+      .json({ erro: "Informe email, senhaAtual e novaSenha" })
+
+  const usuario = await prisma.usuario.findFirst({ where: { email } })
+  if (!usuario) return res.status(400).json({ erro: "Usuário não encontrado" })
+
+  if (!bcrypt.compareSync(senhaAtual, usuario.senha))
+    return res.status(400).json({ erro: "Senha atual inválida" })
+
+  const erros = validaSenha(novaSenha)
+  if (erros.length > 0) return res.status(400).json({ erro: erros.join("; ") })
+
+  const salt = bcrypt.genSaltSync(12)
+  const hash = bcrypt.hashSync(novaSenha, salt)
+
+  try {
+    const returnUsuario = await prisma.usuario.update({
+      where: { id: usuario.id },
+      data: { senha: hash },
+    })
+    return res.status(200).json(returnUsuario)
   } catch (error) {
     return res.status(400).json(error)
   }
