@@ -32,17 +32,17 @@ def login():
         print("Login efetuado com sucesso.")
         token = response.json()["token"]
         userId = response.json()["id"]
-
-        print(f"Token: {token}")
-        print(f"Id: {userId}")
     else:
         print("Erro ao efetuar login.")
 
 
 def listBooks():
     response = requests.get(BASE_URL + "livros")
+    books = response.json()
+    sortedBooks = sorted(books, key=lambda book: book["id"], reverse=True)
+
     print("Lista de Livros:")
-    for book in response.json():
+    for book in sortedBooks:
         print(
             f"Cod: {book['id']} | {book['titulo']} - {book['autor']}, {book['preco']}"
         )
