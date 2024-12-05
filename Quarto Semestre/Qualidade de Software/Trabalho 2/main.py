@@ -27,13 +27,13 @@ def test_incorrect_password(browser):
     time.sleep(1)
     assert "Problemas com o login" in browser.page_source
 
-def test_special_characters(browser):
-    browser.get("https://seubarriga.wcaquino.me/login")
-    browser.find_element(By.ID, "email").send_keys("!@#$%^&*()")
-    browser.find_element(By.ID, "senha").send_keys("!@#$%^&*()")
-    browser.find_element(By.XPATH, "/html/body/div[2]/form/button").click()
-    time.sleep(1)
-    assert "Bem vindo" not in browser.page_source
+# def test_special_characters(browser):
+#     browser.get("https://seubarriga.wcaquino.me/login")
+#     browser.find_element(By.ID, "email").send_keys("!@#$%^&*()")
+#     browser.find_element(By.ID, "senha").send_keys("!@#$%^&*()")
+#     browser.find_element(By.XPATH, "/html/body/div[2]/form/button").click()
+#     time.sleep(1)
+#     assert "Bem vindo" not in browser.page_source
 
 def test_special_characters(browser):
     browser.get("https://seubarriga.wcaquino.me/login")
